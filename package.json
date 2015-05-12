@@ -1,6 +1,6 @@
 {
   "name": "ember-keen-tracking",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Ember Add-on for tracking events with Keen IO",
   "directories": {
     "doc": "doc",
