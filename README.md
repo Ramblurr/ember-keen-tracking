@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/plyfe/ember-keen-tracking.svg?branch=master)](https://travis-ci.org/plyfe/ember-keen-tracking)
+[![Build Status](https://travis-ci.org/plyfe/ember-keen-tracking.svg?branch=master)](https://travis-ci.org/plyfe/ember-keen-tracking) [![Ember Observer Score](http://emberobserver.com/badges/ember-keen-tracking.svg)](http://emberobserver.com/addons/ember-keen-tracking)
 
 # ember-keen-tracking
 
