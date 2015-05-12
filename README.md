@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/plyfe/ember-keen-tracking.svg?branch=master)](https://travis-ci.org/plyfe/ember-keen-tracking)
+
 # ember-keen-tracking
 
 ember-keen-tracking is an easy way to use Keen IO for event tracking in your ember-cli project. A simple Ember service wraps the [keen-js SDK](https://github.com/keen/keen-js) and can be injected anywhere in your application.
