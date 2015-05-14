@@ -10,7 +10,7 @@ We welcome contributions!
 
 ## Installation
 
-`npm install --save-dev ember-keen-tracking`
+`ember install:addon ember-keen-tracking`
 
 ## Setup
 
