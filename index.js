@@ -5,6 +5,6 @@ module.exports = {
   name: 'ember-keen-tracking',
   included: function(app) {
     this._super.included(app);
-    app.import(app.bowerDirectory + '/keen-tracking/keen-tracking.js');
+    app.import(app.bowerDirectory + '/keen-js/dist/keen-tracker.js');
   }
 };
