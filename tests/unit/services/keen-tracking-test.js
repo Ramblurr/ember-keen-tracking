@@ -64,7 +64,7 @@ test('addEvent returns a promise to catch if there\'s an error', function() {
   });
 });
 
-test('multiQuery returns a promise that resolves if success', function() {
+test('addEvents returns a promise that resolves if success', function() {
   var service = this.subject({
     client: keenClientStub.create({successMsg: "Hoorah"})
   });
@@ -74,7 +74,7 @@ test('multiQuery returns a promise that resolves if success', function() {
   });
 });
 
-test('multiQuery returns a promise to catch if there\'s an error', function() {
+test('addEvents returns a promise to catch if there\'s an error', function() {
   var service = this.subject({
     client: keenClientStub.create({failing: true, failureMsg: "Boo"})
   });
