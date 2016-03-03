@@ -1,12 +1,12 @@
 import { moduleFor, test } from 'ember-qunit';
-import env from 'dummy/config/environment';
-//import keenClientStub from '../../helpers/stubs';
+import config from 'ember-get-config';
+
+import keenClientStub from '../../helpers/stubs';
 
 moduleFor('service:keen-tracking', 'Unit | Service | keen tracking', {
   beforeEach: function() {
-    env.KEEN_PROJECT_ID = "project321";
-    env.KEEN_WRITE_KEY = "write321";
-    this.container.register('config:environment', env);
+    config.KEEN_PROJECT_ID = "project321";
+    config.KEEN_WRITE_KEY = "write321";
   }
 });
 
@@ -16,71 +16,66 @@ test('project id uses ENV variable', function(assert) {
   assert.equal(service.get('projectId'), "project321");
 });
 
-/*
-test('project id defaults to global if no env variable or meta tag exists', function(assert){
+test('project id defaults to global if no config variable or meta tag exists', function(assert){
   assert.expect(1);
-  //env.KEEN_PROJECT_ID = null;
-  //window.KEEN_PROJECT_ID = "123project";
+  config.KEEN_PROJECT_ID = null;
+  window.KEEN_PROJECT_ID = "123project";
   var service = this.subject();
   assert.equal(service.get('projectId'), "123project");
 });
 
-test('write key uses ENV variable', function() {
-  expect(1);
+test('write key uses ENV variable', function(assert) {
+  assert.expect(1);
   var service = this.subject();
-  equal(service.get('writeKey'), "write321");
+  assert.equal(service.get('writeKey'), "write321");
 });
 
-test('write key defaults to global if no env variable or meta tag exists', function(){
-  expect(1);
-  env.KEEN_WRITE_KEY = null;
+
+test('write key defaults to global if no env variable or meta tag exists', function(assert){
+  assert.expect(1);
+  config.KEEN_WRITE_KEY = null;
   window.KEEN_WRITE_KEY = "123write";
   var service = this.subject();
-  equal(service.get('writeKey'), "123write");
+  assert.equal(service.get('writeKey'), "123write");
 });
 
-/**
- * @todo change ENV variables and meta tag at runtime, and test them
- * /
 
-test('addEvent returns a promise that resolves if success', function() {
+test('addEvent returns a promise that resolves if success', function(assert) {
   var service = this.subject({
     client: keenClientStub.create({successMsg: "Yay"})
   });
   var promise = service.addEvent('eventName', {});
   promise.then(function(response) {
-    equal(response, "Yay");
+    assert.equal(response, "Yay");
   });
 });
 
-test('addEvent returns a promise to catch if there\'s an error', function() {
+test('addEvent returns a promise to catch if there\'s an error', function(assert) {
   var service = this.subject({
     client: keenClientStub.create({failing: true, failureMsg: "Womp"})
   });
   var promise = service.addEvent('eventName', {});
   promise.catch(function(reason) {
-    equal(reason, "Womp");
+    assert.equal(reason, "Womp");
   });
 });
 
-test('addEvents returns a promise that resolves if success', function() {
+test('addEvents returns a promise that resolves if success', function(assert) {
   var service = this.subject({
     client: keenClientStub.create({successMsg: "Hoorah"})
   });
   var promise = service.addEvents({});
   promise.then(function(response) {
-    equal(response, "Hoorah");
+    assert.equal(response, "Hoorah");
   });
 });
 
-test('addEvents returns a promise to catch if there\'s an error', function() {
+test('addEvents returns a promise to catch if there\'s an error', function(assert) {
   var service = this.subject({
     client: keenClientStub.create({failing: true, failureMsg: "Boo"})
   });
   var promise = service.addEvents({});
   promise.catch(function(reason) {
-    equal(reason, "Boo");
+    assert.equal(reason, "Boo");
   });
 });
-
-*/
